@@ -53,6 +53,12 @@ Em seguida, execute as migrações:
 sail artisan migrate
 ```
 
+Crie o perfil do Instagram:
+
+```bash
+sail artisan instagram-feed:profile YourProfile
+```
+
 ---
 
 ## Registro no Filament
