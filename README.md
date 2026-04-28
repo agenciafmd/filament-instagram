@@ -14,7 +14,7 @@ pacote [justbetter/laravel-instagram-feed](https://github.com/justbetter/laravel
 Você pode instalar o pacote via composer:
 
 ```bash
-sail composer require agenciafmd/filament-instagram
+sail composer require agenciafmd/filament-instagram:dev-master
 ```
 
 ---
@@ -45,6 +45,12 @@ e
 
 ```php
     'client_secret' => env('INSTAGRAM_CLIENT_SECRET'),
+```
+
+Em seguida, execute as migrações:
+
+```bash
+sail artisan migrate
 ```
 
 ---
