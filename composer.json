@@ -1,0 +1,30 @@
+{
+  "name": "agenciafmd/filament-instagram",
+  "description": "Instagram - Agência F&MD",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eduardo Rogerio",
+      "email": "eduardo.rogerio@fmd.ag",
+      "homepage": "https://fmd.ag/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "agenciafmd/filament-admix": "v1.x-dev|dev-master",
+    "justbetter/laravel-instagram-feed": ">=1.1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Agenciafmd\\Instagram\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Agenciafmd\\Instagram\\Providers\\InstagramServiceProvider"
+      ]
+    }
+  }
+}
