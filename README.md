@@ -21,7 +21,7 @@ sail composer require agenciafmd/filament-instagram:dev-master
 
 ## Gerando as chaves
 
-Com uma conta facebook, vá em:
+Com uma conta Facebook, vá em:
 
 https://developers.facebook.com/apps/creation/
 
@@ -41,7 +41,56 @@ Aqui conseguimos o **Client ID** e **Client Secret**
 
 ![05.png](docs/05.png)
 
-//-- TODO Continuar
+Desça até **Configurar o login da empresa no Instagram**
+
+Clique em Configurar e adicione o callback de login.
+
+Ela será https://{url-de-produção}/instagram/auth/callback
+
+![06.png](docs/06.png)
+
+Uma vez adicionado o callback, volte no **Configurações do login da empresa** e adicione as urls dos outros ambientes.
+
+![07.png](docs/07.png)
+
+Vá agora em **Permissões e recursos** e ative as permissões:
+
+- instagram_business_basic
+- public_profile
+
+![08.png](docs/08.png)
+
+Em Configuração do app > Básico, preencha os campos obrigatórios.
+
+> Atenção para Domínios do aplicativo, preencha com o ambiente local, homologação e produção.
+
+![09.png](docs/09.png)
+
+Ainda em básico, vá em **Adicionar plataforma** > Website
+
+Adicione a url de produção.
+
+![10.png](docs/10.png)
+
+Na lateral esquerda, vá em Funções do app > Funções
+
+Vamos em **Adicionar pessoas**
+
+Escolhemos **Testador do Instagram** e enviamos o convite para a conta que iremos consumir.
+
+![11.png](docs/11.png)
+
+Agora no Instagram, vamos na conta que acabamos de enviar o convite.
+
+Clicamos em Mais > Configurações (https://www.instagram.com/accounts/edit/)
+
+![12.png](docs/12.png)
+
+Vamos em **Seu app e suas mídias** > Permissões do site > Apps e sites
+
+Aceite em **Convites do testador**.
+
+![13.png](docs/13.png)
 
 ## Configuração
 
@@ -52,32 +101,15 @@ INSTAGRAM_CLIENT_ID=
 INSTAGRAM_CLIENT_SECRET=
 ```
 
-Publique as configurações do pacote:
-
-```bash
-sail artisan vendor:publish --provider="JustBetter\InstagramFeed\InstagramFeedServiceProvider"
-```
-
-No arquivo `config/instagram-feed.php`, configure os valores de `client_id` e `client_secret` para buscarem do arquivo
-`.env`:
-
-```php
-    'client_id' => env('INSTAGRAM_CLIENT_ID'),
-```
-
-e
-
-```php
-    'client_secret' => env('INSTAGRAM_CLIENT_SECRET'),
-```
-
-Em seguida, execute as migrações:
+Execute as migrações:
 
 ```bash
 sail artisan migrate
 ```
 
 Crie o perfil do Instagram:
+
+> YourProfile é o @ do Instagram que enviamos o convite.
 
 ```bash
 sail artisan instagram-feed:profile YourProfile

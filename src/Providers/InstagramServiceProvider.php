@@ -52,6 +52,7 @@ final class InstagramServiceProvider extends ServiceProvider
     private function registerConfigs(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../../config/filament-instagram.php', 'filament-instagram');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/instagram-feed.php', 'instagram-feed');
     }
 
     private function bootViews(): void
