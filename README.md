@@ -19,6 +19,30 @@ sail composer require agenciafmd/filament-instagram:dev-master
 
 ---
 
+## Gerando as chaves
+
+Com uma conta facebook, vá em:
+
+https://developers.facebook.com/apps/creation/
+
+![01.png](docs/01.png)
+
+![02.png](docs/02.png)
+
+![03.png](docs/03.png)
+
+Depois do App Criado, na lateral, vá em 
+
+Casos de uso > Gerenciar mensagens e conteúdo no Instagram > Personalizar 
+
+![04.png](docs/04.png)
+
+Aqui conseguimos o **Client ID** e **Client Secret**
+
+![05.png](docs/05.png)
+
+//-- TODO Continuar
+
 ## Configuração
 
 Adicione as variáveis de ambiente ao seu arquivo `.env`:

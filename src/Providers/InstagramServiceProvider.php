@@ -40,7 +40,7 @@ final class InstagramServiceProvider extends ServiceProvider
 
     private function bootMigrations(): void
     {
-        //
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
 
     private function bootTranslations(): void

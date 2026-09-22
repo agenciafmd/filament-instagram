@@ -7,17 +7,17 @@ namespace Agenciafmd\Instagram;
 use Illuminate\Support\Facades\Route;
 use JustBetter\InstagramFeed\Profile;
 
-Route::get('instagram-auth-success', function () {
-    return 'Sucesso ao linkar a conta!';
+Route::get('instagram-auth-success', static function () {
+    return 'Sucesso ao linkar a conta!'; // TODO, alimentar o sweetalert e redirecionar
 })
     ->name('admix.instagram.success');
 
-Route::get('instagram-auth-failure', function () {
-    return 'Falha ao linkar a conta!';
+Route::get('instagram-auth-failure', static function () {
+    return 'Falha ao linkar a conta!'; // TODO, alimentar o sweetalert e redirecionar
 })
     ->name('admix.instagram.failure');
 
-Route::get('instagram', function () {
+Route::get('instagram', static function () {
     $route = Profile::query()
         ->first()
         ?->getInstagramAuthUrl() ?: '/admix';
