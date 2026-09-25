@@ -6,11 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-final class CreateInstagramBasicProfileTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('justbetter_instagram_basic_profiles', function (Blueprint $table) {
+        Schema::create('justbetter_instagram_basic_profiles', static function (Blueprint $table): void {
             $table->increments('id');
             $table->string('username')
                 ->unique();
@@ -21,4 +21,4 @@ final class CreateInstagramBasicProfileTable extends Migration
             $table->nullableTimestamps();
         });
     }
-}
+};

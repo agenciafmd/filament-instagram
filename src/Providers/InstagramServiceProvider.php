@@ -19,7 +19,7 @@ final class InstagramServiceProvider extends ServiceProvider
 
         $this->bootViews();
 
-        $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
+        $this->callAfterResolving(Schedule::class, function (Schedule $schedule): void {
             $schedule->command('instagram-feed:refresh')
                 ->hourly();
 
