@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Agenciafmd\Instagram;
 
-use Agenciafmd\Instagram\Widgets\InstagramWidget;
+use Agenciafmd\Instagram\Pages\InstagramPage;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
@@ -23,8 +23,8 @@ final class InstagramPlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
-            ->widgets([
-                InstagramWidget::class,
+            ->pages([
+                InstagramPage::class,
             ]);
     }
 
